@@ -57,7 +57,11 @@
         <parameter key="datamanagement" value="double_array"/>
         <parameter key="data_management" value="auto"/>
       </operator>
-      <connect from_op="Read CSV" from_port="output" to_port="result 1"/>
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store" width="90" x="380" y="136">
+        <parameter key="repository_entry" value="../Data/supermarket_sales"/>
+      </operator>
+      <connect from_op="Read CSV" from_port="output" to_op="Store" to_port="input"/>
+      <connect from_op="Store" from_port="through" to_port="result 1"/>
       <portSpacing port="source_input 1" spacing="0"/>
       <portSpacing port="sink_result 1" spacing="0"/>
       <portSpacing port="sink_result 2" spacing="0"/>
